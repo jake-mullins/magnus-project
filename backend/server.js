@@ -1,9 +1,12 @@
 const express       = require("express");
 const bodyParser    = require("body-parser");
 require("dotenv").config();
+require("./auth.js");
 
-const pg  = require("pg");
-const { Pool }  = pg;
+// Authentication
+const passport  = require('passport');
+const GoogleStrategy  = require('passport-google-oauth20');
+
 
 // Routes
 const apiRoutes  = require('./routes/api.js');

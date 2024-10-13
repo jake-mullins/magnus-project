@@ -9,11 +9,13 @@ const pool = new Pool({
     password: process.env.PGPASSWORD
 });
 
-(async () => {
-    await pool.query(`SELECT 1`);
-    console.log("Connected to Postgres");
-})().catch((err) => {
-    console.log(err);
-})
+async function dbConnect() {
+    try {
+        await pool.query('SELECT 1');
+        console.log("Connected to Postgres");
+    } catch (err) {
+        console.error(err);
+    }
+}
 
-module.exports  = pool;
+dbConnect();

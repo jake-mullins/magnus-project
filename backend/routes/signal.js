@@ -1,13 +1,13 @@
 const express   = require('express');
 const router    = express.Router();
-const signalsController = require('../controllers/signalsController.js');
+const signalController = require('../controllers/signalController.js');
 
-router.get('/',     signalsController.getAllSignals);
-router.get('/:id',  signalsController.getSignalByLocalIncident);
-// router.get('/signal', signalsRouter.getSignalByUser);
+router.get('/',     signalController.getAllSignals);
+router.get('/:id',  signalController.getSignalByLocalIncident);
+// router.get('/signal', signalRouter.getSignalByUser);
 
-router.post('/',        signalsController.createSignal);
-router.post('/update',  signalsController.updateSignal);
-router.post('/delete',  signalsController.deleteSignal);
+router.post('/',        signalController.createSignal);
+router.post('/update',  signalController.updateSignal);
+router.post('/delete',  signalController.deleteSignal);
 
 module.exports  = router;

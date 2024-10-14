@@ -11,6 +11,7 @@ require("dotenv").config();
 const apiRoutes  = require('./routes/api.js');
 const authRoutes = require('./routes/auth.js');
 const profileRoutes = require('./routes/profile.js');
+const signalRoutes  = require('./routes/signal.js')
 
 const app   = express();
 
@@ -44,6 +45,7 @@ app.use(middleware.isAuthenticated);
 app.use('/api', apiRoutes);
 app.use('/auth', authRoutes);
 app.use('/profile', profileRoutes);
+app.use('/signal', signalRoutes);
 
 const PORT  = process.env.PORT;
 

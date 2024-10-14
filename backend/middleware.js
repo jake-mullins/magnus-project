@@ -9,7 +9,6 @@ function logRequest(req, res, next) {
 }
 
 function isAuthed (req, res, next) {
-    console.log(req.user);
     if (req.user) {
         return next();
     }

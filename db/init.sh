@@ -1,3 +1,5 @@
+docker volume create post_geo_data
+
 docker run \
     -v ./init.sql:/docker-entrypoint-initdb.d/init.sql \
     -v ./test_data.sql:/docker-entrypoint-initdb.d/test_data.sql \
